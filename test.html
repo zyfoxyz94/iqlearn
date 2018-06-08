@@ -1,3 +1,20 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ @zyfoxyz94 Sign out
+0
+0 0 zyfoxyz94/iqlearn
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
+iqlearn/test.html
+a0de9c4  2 minutes ago
+@zyfoxyz94 zyfoxyz94 Update test.html
+     
+450 lines (302 sloc)  12.1 KB
 <!doctype html>
 <html lang="en">
 <head>
@@ -41,12 +58,10 @@
                     var form = document.querySelector('#recognition-form'),
                         input = document.querySelector('#recognition-input'),
                         element = document.querySelector('#recognition-element');
-
                     form.addEventListener('submit', function(e) {
                         e.preventDefault();
                         element.start();
                     });
-
                     element.addEventListener('result', function(e) {
                         input.textContent = e.detail.result;
                     });
@@ -81,11 +96,9 @@
 		.wrapper {
     text-align: center;
 }
-
 	*{
     box-sizing: border-box;
 }
-
 .column {
     float: left;
     width: 16.66;
@@ -93,9 +106,6 @@
 	height: 10.00;
    
 }
-
-
-
 /* Clearfix (clear floats) */
 .row::after {
     content: "";
@@ -103,7 +113,6 @@
     display: table;
 	
 }
-
 .navbar-brand a:hover{
 	color: red;
 }
@@ -117,7 +126,6 @@
 		  
 		  alert("click on the image to hear its pronunciation");
 		  }
-
           var alif = new Audio();
           alif.src = "sound/alif.mp4";
 		  
@@ -223,10 +231,8 @@
 	
 	
     <!--
-
         Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
         Tip 2: you can also add an image using data-image tag
-
     -->
 
     <div class="sidebar-wrapper">
@@ -447,3 +453,16 @@
 	
 
 </html>
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog
+About
+Press h to open a hovercard with more details.
