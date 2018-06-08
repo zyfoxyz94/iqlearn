@@ -71,32 +71,6 @@
 }
 </style>
 	
-	<script>
-    var recognition = new webkitSpeechRecognition();
-    recognition.continuous = true;
-    recognition.lang = "ms-MY";
-    //recognition.interimResults = true;
-    function start(){
-        recognition.onresult = function(event) { 
-            console.log(event);
-            var output = document.getElementById("output");
-            output.innerHTML = "";
-            var last = event.results.length - 1;
-            var ayams = event.results[last][0].transcript;;
-            recognition.stop();
-            if (ayams == "ayam"){
-                output.innerHTML = "berjayooo " + event.results[last][0].transcript;'
-                alert("I am an alert box!");
-                recognition.stop();
-            }
-            else {
-                output.innerHTML = event.results[last][0].transcript;
-                alert("Salah");
-            }
-        }
-        recognition.start();
-    }
-</script>
    
 		<script>
 
@@ -195,64 +169,7 @@
 </head>
 <body background="assets/img/5.png">
 
-<div class="wrapper">
-    <div class="sidebar" data-color="gray" data-image="assets/img/side.png">
 
-	
-	
-	
-    <!--
-        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
-        Tip 2: you can also add an image using data-image tag
-    -->
-
-    <div class="sidebar-wrapper">
-            <div class="logo">
-                <a href="dashboard.html" class="simple-text">
-                    <b>IQLEARN</b>
-                </a>
-            </div>	
-			
-			<ul class="nav">
-                <li>
-                    <a href="dashboard.html">
-                        <i class="pe-7s-cash"></i>
-                        <p>HOME</p>
-                    </a>
-                </li>
-				<li>
-                    <a href="dashboard.html">
-                        <i class="pe-7s-note2"></i>
-                        <p>ABOUT US</p>
-                    </a>
-                </li>
-			</ul>
-	</div>
-    </div>
-
-	
-	
-	
-    <div class="main-panel">
-        <nav class="navbar navbar-default navbar-fixed">
-            <div class="container-fluid">
-                <div class="navbar-header">
-
-                  <a class="navbar-brand" href="test.html">Test Your Iqra</a>
-					<a class="navbar-brand" href="test1.html">Test 1</a>
-					<a class="navbar-brand" href="test2.html">Test 2</a>
-					<a class="navbar-brand" href="test3.html">Test 3</a>
-					<a class="navbar-brand" href="practice.html">Back To Practice</a>
-                </div>
-                
-				
-				
-			
-				
-				
-				
-            </div>
-        </nav>
 
 
 
