@@ -1,25 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+
+.button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+.button5:hover {
+    background-color: #555555;
+    color: white;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button5:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  
+.footer{ 
+       position: fixed;     
+       text-align: center;    
+       bottom: 0px; 
+       width: 100%;
+   }  
+   
+ div.absolute {
+    position: absolute;
+    width: 50%;
+    bottom: 10px;
+} 
+
+div.parent {
+    position: relative;
+    height: 100%;
+	width: 50%;
+}
+
+
+</style>
 <title>ABOUT US</title>
 <link rel="stylesheet" href="styleabout.css">
 </head>
-
 <body>
-<h2>WELCOME TO IQLEARN</h2>
+<div class="parent">
+<body background="assets/img/5.png">
+<center>
 
+<h1> <font face="Cooper Black">WELCOME TO IQLEARN </font></h1>
+
+<div style=" height: 100px; width: 400px;" > </div>
 <script>
 
 </script>
+<div style=" height: 100px; width: 600px;"> IQRA’ International Education Foundation is a non-profit Islamic educational establishment (waqf) instituted to creatively respond to the growing need of our children, youth, and adults for sound Islamic instruction in the modern global village.</div>
 
-<form>
+<!-- <form>
 	<table border=1>
 	<tr><td>IQRA’ International Education Foundation is a non-profit Islamic educational establishment (waqf) instituted to creatively respond to the growing need of our children, youth, and adults for sound Islamic instruction in the modern global village.</td></tr>
 	<tr><td><image src="assets/img/3.png" width=100 height=100 title="kids"></image></td></tr>
 	<tr><td>bye</td></tr>
 	</table>
-</form>
+</form> -->
 
-<a href="dashboard.html">Click here to go home</a>
+<div style=" height: 100px; width: 400px;" > </div>
+ <section>
+      <a href="dashboard.html"><button type=onclick class="button button5">Click here to go home</button></a>
+    </section>
+</center>
+</div>
 </body>
 </html>
