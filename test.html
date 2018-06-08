@@ -30,6 +30,42 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
 
+	<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+	<link rel="import" href="bower_components/voice-elements/dist/voice-player.html">
+<link rel="import" href="bower_components/voice-elements/dist/voice-recognition.html">
+	
+	<voice-recognition id="recognition-element" accent="ms-MY"></voice-recognition>
+                <script>
+                window.addEventListener('WebComponentsReady', function(e) {
+                    var form = document.querySelector('#recognition-form'),
+                        input = document.querySelector('#recognition-input'),
+                        element = document.querySelector('#recognition-element');
+
+                    form.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        element.start();
+                    });
+
+                    element.addEventListener('result', function(e) {
+                        input.textContent = e.detail.result;
+                    });
+					
+					
+                });
+				
+				
+                </script>
+	
+		<script>
+			if (input.textContent=="Ba")
+					{
+						alert("Betul");
+						
+					}	
+					else
+					
+		</script>
+	
 	
 	
 	
