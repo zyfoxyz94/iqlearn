@@ -1,20 +1,3 @@
-Skip to content
- 
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- @zyfoxyz94 Sign out
-0
-0 0 zyfoxyz94/iqlearn
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
-iqlearn/test.html
-a0de9c4  2 minutes ago
-@zyfoxyz94 zyfoxyz94 Update test.html
-     
-450 lines (302 sloc)  12.1 KB
 <!doctype html>
 <html lang="en">
 <head>
@@ -48,47 +31,13 @@ a0de9c4  2 minutes ago
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
 
 	
-	<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-	<link rel="import" href="bower_components/voice-elements/dist/voice-player.html">
-<link rel="import" href="bower_components/voice-elements/dist/voice-recognition.html">
-	
-	<voice-recognition id="recognition-element" accent="ms-MY"></voice-recognition>
-                <script>
-                window.addEventListener('WebComponentsReady', function(e) {
-                    var form = document.querySelector('#recognition-form'),
-                        input = document.querySelector('#recognition-input'),
-                        element = document.querySelector('#recognition-element');
-                    form.addEventListener('submit', function(e) {
-                        e.preventDefault();
-                        element.start();
-                    });
-                    element.addEventListener('result', function(e) {
-                        input.textContent = e.detail.result;
-                    });
-					
-					
-                });
-				
-				
-                </script>
-	
-		<script>
-			if (input.textContent=="Ba")
-					{
-						alert("Betul");
-						
-					}	
-					else
-					
-		</script>
-	
 	
 	
 	<style>
 	#rcorners1 {
     border-radius: 25px;
-    background: lightblue;
-    padding: 20px 20px; 
+    background: #73AD21;
+    padding: 20px; 
     width: 300px;
     height: 100px; 
 	align: center;
@@ -96,16 +45,23 @@ a0de9c4  2 minutes ago
 		.wrapper {
     text-align: center;
 }
+
 	*{
     box-sizing: border-box;
 }
+
 .column {
     float: left;
     width: 16.66;
     padding: 2px;
 	height: 10.00;
-   
+	
+	
+    
 }
+
+
+
 /* Clearfix (clear floats) */
 .row::after {
     content: "";
@@ -113,19 +69,37 @@ a0de9c4  2 minutes ago
     display: table;
 	
 }
-.navbar-brand a:hover{
-	color: red;
-}
 </style>
 	
-	
+	<script>
+    var recognition = new webkitSpeechRecognition();
+    recognition.continuous = true;
+    recognition.lang = "ms-MY";
+    //recognition.interimResults = true;
+    function start(){
+        recognition.onresult = function(event) { 
+            console.log(event);
+            var output = document.getElementById("output");
+            output.innerHTML = "";
+            var last = event.results.length - 1;
+            var ayams = event.results[last][0].transcript;;
+            recognition.stop();
+            if (ayams == "ayam"){
+                output.innerHTML = "berjayooo " + event.results[last][0].transcript;'
+                alert("I am an alert box!");
+                recognition.stop();
+            }
+            else {
+                output.innerHTML = event.results[last][0].transcript;
+                alert("Salah");
+            }
+        }
+        recognition.start();
+    }
+</script>
    
 		<script>
-		
-		function instruction(){
-		  
-		  alert("click on the image to hear its pronunciation");
-		  }
+
           var alif = new Audio();
           alif.src = "sound/alif.mp4";
 		  
@@ -213,6 +187,7 @@ a0de9c4  2 minutes ago
 		  
 		  
 		  
+		  
 		
 		
 		</script>
@@ -225,151 +200,16 @@ a0de9c4  2 minutes ago
 
 
 <div class="wrapper">
-    <div class="sidebar" data-color="gray" data-image="assets/img/side.png"<div class="content">
-            <div class="container-fluid">
-
-
-
-               <div class="row">
-					<div class="column">
-						<button onclick="kho.play()"><img src="huruf/kho.JPG" height="100" width="100"></button>
-					</div>
-					<div class="column">
-						<button onclick="ha.play()"><img src="huruf/ha.JPG" height="100" width="100"></button>
-												
-					</div>
-				<div class="column">
-					<button onclick="jim.play()"><img src="huruf/jim.JPG" height="100" width="100"></button>
-				</div>
-				<div class="column">
-					<button onclick="sa.play()"><img src="huruf/sa.JPG" height="100" width="100"></button>
-				</div>
-				
-				<div class="column">
-						<button onclick="ta.play()"><img src="huruf/ta.JPG" height="100" width="100"></button>
-												
-					</div>
-				<div class="column">
-					<button onclick="ba.play()"><img src="huruf/ba.JPG" height="100" width="100"></button>
-				</div>
-				<div class="column">
-					<button onmousedown="alif.play()"><img src="huruf/ali.JPG" height="100" width="100" ></button>
-					
-					
-    
-
-				</div>
-			</div>
-			
-			
-			<div class="row">
-					<div class="column">
-					<button onclick="shod.play()"><img src="huruf/shod.JPG" height="100" width="100"></button>
-				</div>
-				<div class="column">
-					<button onclick="syin.play()"><img src="huruf/syin.JPG" height="100" width="100"></button>
-				</div>
-					
-					<div class="column">
-						<button onclick="sin.play()"><img src="huruf/sin.JPG" height="100" width="100"></button>
-												
-					</div>
-				<div class="column">
-					<button onclick="za.play()"><img src="huruf/za.JPG" height="100" width="100"></button>
-				</div>
-				<div class="column">
-					<button onclick="ro.play()"><img src="huruf/ro.JPG" height="100" width="100"></button>
-				</div>
-				
-				<div class="column">
-						<button onclick="dzal.play()"><img src="huruf/dzal.JPG" height="100" width="100"></button>
-												
-					</div>
-				<div class="column">
-					<button onclick="dal.play()"><img src="huruf/dal.JPG" height="100" width="100"></button>
-				</div>
-				
-			</div>
-			
-			
-			<div class="row">
-					<div class="column">
-						<button onclick="qof.play()"><img src="huruf/qof.JPG" height="100" width="100"></button>
-												
-					</div>
-				<div class="column">
-					<button onclick="fa.play()"><img src="huruf/fa.JPG" height="100" width="100"></button>
-				</div>
-				<div class="column">
-					<button onclick="ghin.play()"><img src="huruf/ghin.JPG" height="100" width="100"></button>
-				</div>
-					<div class="column">
-						<button onclick="ain.play()"><img src="huruf/ain.JPG" height="100" width="100"></button>
-												
-					</div>
-				<div class="column">
-					<button onclick="dzo.play()"> <img src="huruf/dzo.JPG" height="100" width="100"></button>
-				</div>
-				<div class="column">
-					<button onclick="tho.play()"><img src="huruf/tho.JPG" height="100" width="100"></button>
-				</div>
-				
-				<div class="column">
-						<button onclick="dlod.play()"><img src="huruf/dlod.JPG" height="100" width="100"></button>
-												
-					</div>
-				
-			</div>
-			
-			
-			<div class="row">
-			<div class="column">
-						<button onclick="yak.play()"><img src="huruf/ya.JPG" height="100" width="100"></button>
-												
-					</div>
-
-				
-				<div class="column">
-						<button onclick="hha.play()"><img src="huruf/hha.JPG" height="100" width="100"></button>
-												
-					</div>
-				<div class="column">
-					<button onclick="wawu.play()"><img src="huruf/wawu.JPG" height="100" width="100"></button>
-				</div>
-				<div class="column">
-					<button onclick="nun.play()"><img src="huruf/nun.JPG" height="100" width="100"></button>
-				</div>
-					<div class="column">
-						<button onclick="mim.play()"><img src="huruf/mim.JPG" height="100" width="100"></button>
-												
-					</div>
-				<div class="column">
-					<button onclick="lam.play()"><img src="huruf/lam.JPG" height="100" width="100"></button>
-				</div>
-				<div class="column">
-					<button onclick="kaf.play()"><img src="huruf/kaf.JPG" height="100" width="100"></button>
-				</div>		
-				<button onclick="instruction()"><img src="huruf/qmark.jpg" height="60" width="60"></button>
-			</div>
-			
-	
-						
-				
-				
-			</div>
-        </div>
-    </div>
-</div>
-
-
-</body>>
+    <div class="sidebar" data-color="gray" data-image="assets/img/side.png">
 
 	
 	
 	
     <!--
+
         Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
         Tip 2: you can also add an image using data-image tag
+
     -->
 
     <div class="sidebar-wrapper">
@@ -404,12 +244,11 @@ a0de9c4  2 minutes ago
             <div class="container-fluid">
                 <div class="navbar-header">
 
-                    <a class="navbar-brand" href="practice.html">Learn</a>
-					<a class="navbar-brand" href="practice1.html">Fathah</a>
-					<a class="navbar-brand" href="practice2.html">Kasroh</a>
-					<a class="navbar-brand" href="practice3.html">Dhomah</a>
-					<a class="navbar-brand" href="test.html">Test</a>
-					
+                    <a class="navbar-brand" href="test.html">Test Your Iqra</a>
+					<a class="navbar-brand" href="test1.html">Test 1</a>
+					<a class="navbar-brand" href="test2.html">Test 2</a>
+					<a class="navbar-brand" href="test3.html">Test 3</a>
+					<a class="navbar-brand" href="practice.html">Back To Practice</a>
                 </div>
                 
 				
@@ -426,7 +265,7 @@ a0de9c4  2 minutes ago
             <div class="container-fluid">
 
 
-	<form id="recognition-form" class="pure-form" >
+
                <div class="row">
 					<div class="column">
 						<button onclick="kho.play()"><img src="huruf/kho.jpg" height="100" width="100"></button>
@@ -450,10 +289,10 @@ a0de9c4  2 minutes ago
 					<button onclick="ba.play()"><img src="huruf/ba.jpg" height="100" width="100"></button>
 				</div>
 				<div class="column">
-				<form id="recognition-form" class="pure-form" >
-					<button id="recognition-submit"><img src="huruf/ali.jpg" height="100" width="100" ></button>
+					<button onmousedown="recognition"><img src="huruf/ali.jpg" height="100" width="100" ></button>
 					
-				
+					
+    
 
 				</div>
 			</div>
@@ -545,19 +384,15 @@ a0de9c4  2 minutes ago
 				</div>
 				<div class="column">
 					<button onclick="kaf.play()"><img src="huruf/kaf.jpg" height="100" width="100"></button>
-				</div>		
-				<button onclick="instruction()"><img src="huruf/qmark.jpg" height="60" width="60"></button>
+				</div>
+				
+				
 			</div>
-			
-	
+				
 						
 				
-			</form>	
-    
+				
 			</div>
-			<form id="recognition-form" class="pure-form">
-			<center><textarea id="recognition-input" readonly></textarea></center>
-			</form>
         </div>
     </div>
 </div>
@@ -590,16 +425,3 @@ a0de9c4  2 minutes ago
 	
 
 </html>
-© 2018 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-API
-Training
-Shop
-Blog
-About
-Press h to open a hovercard with more details.
